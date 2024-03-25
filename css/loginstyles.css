@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+*{
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: rgb(0, 0, 0);
+    scroll-behavior: smooth;
+    overflow:hidden;
+}
+
+.background{
+     height: 100vh;
+     width: 100%;
+     filter: contrast(80%) brightness(90%) opacity(75%);
+     z-index: -1;
+     object-fit: cover;
+     position: fixed;
+}
+
+.form-container{
+     z-index: 2;
+     height: fit-content;
+     width: 30%;
+     background: rgba(0, 0, 0, 0.372);
+     border-radius: 7px;
+
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     padding: 15px;
+
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+
+}
+.form-container h2{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-weight: 500;
+     font-size: 30px;
+     color: white;
+     text-shadow: 2px 2px 2px #ff1a7f;
+     width: fit-content;
+     padding: 5px 15px;
+
+}
+.form-container p{
+     color: rgb(255, 10, 10);
+}
+
+.form-inputs{
+     display: flex;
+     flex-direction: column;
+     gap:  10px;
+}
+.form-inputs h3{
+     font-weight: 600;
+     font-size: 20px;
+     color: white;
+}
+
+.form-inputs input{
+     background: none;
+     outline: none;
+     border: none;
+     color: white;
+     border-bottom: 2px solid rgb(236, 0, 236);
+     padding: 5px;
+     margin-top: -9px;
+     margin-bottom: 5px;
+}
+
+.form-inputs input::placeholder{
+     color: white;
+}
+input[type=password]{
+     background-color: rgba(255, 255, 255, 0.176);
+}
+ 
+
+.form-inputs button{
+     max-width: 30%;
+     min-width: fit-content;
+     margin: auto;
+
+     padding: 3px 15px;
+     margin-top: 15px;
+
+     cursor: pointer;
+     background: linear-gradient(to right, #7300ff ,#c50163);
+     transition: .5s ease all;
+     text-align: center;
+     line-height: 30px;
+     font-size: 18px;
+     color: white;
+     border: none;
+     border: 1px solid black;
+     border-radius:10px;
+     letter-spacing: 5px;
+     transition: all 0.5s;
+}
+
+.form-inputs button:hover{
+     box-shadow: 0px 0px 10px  rgba(253, 2, 98, 0.76);
+}
+.form-inputs a{
+     color: rgb(255, 151, 248);
+     text-decoration: none;
+     letter-spacing: 1px;
+     margin-top: 5%;
+     font-size: 15px;
+     cursor: pointer;
+}
+
+
+
+.remember span{
+     color: white;
+     font-size: 14px;
+}
+
+
+.notvisible{
+     display: none;
+}
+
+
+
+
+
+
+
+/**/
+
+
+

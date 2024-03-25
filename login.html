@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+     <!-- Custom Css -->
+     <link rel="stylesheet" href="css/loginstyles.css">
+     <title>Document</title>
+</head>
+<body class="body-login">
+     <img src="images/backgrounds/background2.jpg" class="background">
+
+     <!-- Login Form -->
+     <form class="form-container">
+          <h2>Log-in</h2> 
+          <hr>
+          <div class="form-inputs">
+               <h3>Username</h3>
+               <input type="text" id="username" required placeholder="user">
+
+               <h3>Password</h3>
+               <input type="password"  id="pass" required placeholder="pass">
+               <p class="remember"><input type="checkbox"> <span>Remember me</span></p>
+
+               <button class="form-submit">START</button>
+               <a class="login-change">Don't have an account? Sign Up!</a>
+               
+          </div>
+     </form>
+
+     <!-- Register Form -->
+     <form class="form-container register notvisible">
+          <h2>Sign-up</h2> 
+          <hr>
+          <div class="form-inputs registerdiv">
+               <h3>Email</h3>
+               <input type="email" id="register-email" required placeholder="example@example.ex">
+
+               <h3>Username</h3>
+               <input type="text" id="register-username" required placeholder="user">
+
+               <h3>Password</h3>
+               <input type="password"  id="register-pass" required placeholder="pass">
+
+               <button class="form-submit">START</button>
+               <a class="register-change">You have an account? Sign In!</a>
+          </div>
+     </form>
+     
+     
+     <!-- Custom JS -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     
+     <script type="module" src="js/login.js"></script>
+</body>
+</html>
