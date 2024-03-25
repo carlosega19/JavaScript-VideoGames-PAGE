@@ -1,4 +1,3 @@
-// Clase Juegos
 class Game{
      constructor(img , id , gender, name , size, price ,psn , xbox , pc , nin ,buyIn){  
           this.image = img;
@@ -17,7 +16,7 @@ class Game{
      }
 }
 
-//Variables ------------------
+// consts ------------------
 const homeGames = document.querySelector(".homeGames"),
      homeUser = document.querySelector(".fa-user"),
      homeCart = document.querySelector(".header-nav .fa-cart-shopping"),
@@ -39,7 +38,7 @@ const homeGames = document.querySelector(".homeGames"),
 let games = [];
 let page = 1;
 
-//  --------------- Funciones -------------
+//  --------------- Functions -------------
 function totalToPay(arr){
      if  (arr.length === 0 ) { return 0;}
      return arr.reduce( (total , game)=>{
@@ -63,7 +62,6 @@ function addNewGames(elements) {
 }
 
 async function searchGamesByName(txt){
-     //return games.filter( game => game.name.toLowerCase().includes(txt.toLowerCase()));
      return fetch(`https://api.rawg.io/api/games?key=8e9c3b676c0648798bb5611ca2c609e8&search=${txt}&page=1&page_size=20`)
           .then(data => data.json())
           .then(resData=> {
@@ -129,8 +127,9 @@ async function getGames(page) {
      const response = await fetch(`https://api.rawg.io/api/games?key=8e9c3b676c0648798bb5611ca2c609e8&page=${page}&page_size=20`);
      const data = await response.json();
      return data.results;
-}   // Función para obtener todos los juegos
+}   
 
+// Get all games from the API to an array
 async function getAllGames(page) {
      let allGames = [];
      let games = await getGames(page);
@@ -138,7 +137,7 @@ async function getAllGames(page) {
           allGames = allGames.concat(games);
           games = await getGames(page);
      }
-     return allGames; // Obtén solo los primeros 20 juegos
+     return allGames; // only the first 20 games
 }
 
 getAllGames(page).then((gamesData) => {
@@ -159,7 +158,7 @@ function addPrices() {
 }
 
 async function loadMoreResults() {
-     // Verifica si el usuario ha llegado al final de la página
+     // Verify if the user in on the bottom 
      if (gamesPanel.scrollTop + gamesPanel.clientHeight >= gamesPanel.scrollHeight) {    
           gamesPanel.innerHTML += '<lottie-player class="load" src="https://lottie.host/b5521566-3f59-4120-9229-34df0522ce3f/1dSgd8EuBl.json" background="##000" speed="2" style="width: 100px; height: 100px" loop autoplay></lottie-player>';
           page += 1;
@@ -190,7 +189,7 @@ function getSelectedGenders(){
      return genders;
 }
 
-// Activar solo un check de plataformas
+// Activate only one platform at time
 function getSelectedConsole(){
      let selected;
      let isSelected = false;
@@ -267,7 +266,7 @@ function showCart(){
      }
 }
 
-// Funciones para la vista del carrito de compras
+// Update the view of the cart
 function updateShopCartView(){
      
      if (user.shopCart.length == 0){
@@ -316,7 +315,7 @@ function updateShopCartView(){
      }   
 }
 
-// Eventos <------------------------->
+// Events <------------------------->
 gamesPanel.addEventListener('scroll', loadMoreResults);
 
 filterBtn.addEventListener('click' , ()=>{
@@ -351,7 +350,7 @@ checkboxesConsole.forEach((checkbox)=>{
      }); 
 });
 
-// COMPORTAMIENTO DE PAGINA
+// Page behavior
 const user = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
 if (user){
      user.shopCart = JSON.parse(localStorage.getItem("userShopcart")) || [];
